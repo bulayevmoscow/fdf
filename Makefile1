@@ -1,0 +1,30 @@
+NAME = fractol
+FLAGS = -Wall -Werror -Wextra  -O3 -ffast-math
+LIBRARIES = -lmlx  -lm -lft -L$(LIBFT_D) -L$(MINILIBX_D) -framework OpenGL -framework AppKit
+INCLUDES = -I./ -I$(LIBFT_D) -I$(MINILIBX_D)
+LIBFT = $(LIBFT_D) libft_pro.a
+LIBFT_D = ./libft/
+MINILIBX = $(MINILIBX_D)libmlx.a
+MINILIBX_D = ./minilibx/
+HEADERS = 
+SRC = main.c
+OBJ = $(SRC:.c=o.c)
+all: $(NAME)
+$(NAME): $(LIBFT) $(MINILIBX)
+    @gcc $(FLAGS) -I ./ -c $(SRC)
+    @gcc $(FLAGS) -g $(LIBRARIES) $(INCLUDES)  -o $(NAME) $(OBJ)
+$(LIBFT):
+    @$(MAKE) -sC $(LIBFT_D)
+$(MINILIBX):
+    @$(MAKE) -sC $(MINILIBX_D)
+clean:
+    @$(MAKE) -sC $(LIBFT_D) clean
+    @$(MAKE) -sC $(MINILIBX_D) clean
+    @rm -rf $(OBJ)
+fclean: clean
+    @rm   -f ./libft/libft.a
+    @rm   -f $(NAME)
+re:
+    @$(MAKE) fclean
+    @$(MAKE) all
+
