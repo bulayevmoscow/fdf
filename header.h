@@ -6,7 +6,7 @@
 /*   By: kupsyloc <kupsyloc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 23:24:20 by kupsyloc          #+#    #+#             */
-/*   Updated: 2020/08/28 00:49:59 by kupsyloc         ###   ########.fr       */
+/*   Updated: 2020/08/28 02:31:50 by kupsyloc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ typedef struct	s_fdf
 	void	*win_ptr;
 }				t_fdf;
 
-
+int get_height(char **argv, t_fdf *fdf);
 
 
 #endif
+
+// gcc  -lmlx -framework OpenGL -framework AppKit main.c minilibx/libmlx_intel-mac.a libft/libft_pro.a parser.c -o kekw && ./kekw ./test_maps/42.fdf
