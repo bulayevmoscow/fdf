@@ -6,11 +6,12 @@
 /*   By: kupsyloc <kupsyloc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 23:24:20 by kupsyloc          #+#    #+#             */
-/*   Updated: 2020/08/28 02:31:50 by kupsyloc         ###   ########.fr       */
+/*   Updated: 2020/08/28 03:11:26 by kupsyloc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
+
 # define FDF_H
 #include "minilibx/mlx.h"
 #include "libft/ft_printf/includes/header.h"
@@ -18,6 +19,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#define MAX(a,b) (a > b) ? a : b
+#define ABS(a) (a < 0) ? a : -a
 
 typedef struct	s_fdf
 {
